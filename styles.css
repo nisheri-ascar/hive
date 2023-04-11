@@ -52,6 +52,12 @@ nav {
 	text-decoration: none;
 }
 
+.system-info {
+	background-color: #03346c;
+	color: #fff; /* set the text color to white */
+  }
+  
+
 @media (max-width: 768px) {
 	.menu {
 		display: none;
