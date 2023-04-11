@@ -1,1 +1,52 @@
-a
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="logo">
+				<h1>Hello World!</h1>
+			</div>
+			<div class="time">
+				<p>Current Time: <span id="currentTime"></span></p>
+			</div>
+			<nav>
+				<div class="menu-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">System Status</a></li>
+					<li><a href="#">Remote Shell</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<script>
+		function showTime() {
+			var date = new Date();
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var seconds = date.getSeconds();
+			var amOrPm = hours >= 12 ? 'PM' : 'AM';
+			hours = hours % 12;
+			hours = hours ? hours : 12; //if hours is 0, set it to 12
+			minutes = minutes < 10 ? '0'+minutes : minutes;
+			seconds = seconds < 10 ? '0'+seconds : seconds;
+			var time = hours + ':' + minutes + ':' + seconds + ' ' + amOrPm;
+			document.getElementById("currentTime").innerHTML = time;
+			setTimeout(showTime, 1000);
+		}
+
+		showTime();
+	</script>
+</body>
+</html>
+
